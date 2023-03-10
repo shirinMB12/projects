@@ -1,0 +1,71 @@
+import java.util.Objects;
+
+public class Planet {
+
+
+    private String designation;
+    private double massKg;
+    private double orbitEarthYears;
+    private PlanetType type;
+
+    public Planet(String designation, PLanetType type) {
+        this.designation = designation;
+        this.type = type;
+    }
+
+    public Planet(String designation, double massKg, double orbitEarthYears,
+                  PlanetType type) {
+        this.designation = designation;
+        this.massKg = massKg;
+        this.orbitEarthYears = orbitEarthYears;
+        this.type = type;
+    }
+
+    public String getDesignation(){
+        return getDesignation();
+    }
+
+    public double getMassKg() {
+        return massKg;
+    }
+
+    public double getOrbitEarthYears() {
+        return orbitEarthYears;
+    }
+
+    public PlanetType getType() {
+        return type;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        PLanet planet = (PLanet) obj;
+        return Double.compare(planet.massKg, massKg) == 0 &&
+                Double.compare(planet.orbitEarthYears, orbitEarthYears) == 0 &&
+                Objects.equals(designation, planet.designation) &&
+                type = planet.type;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(designation, massKg, orbitEarthYears, type);
+    }
+
+    @Override
+    public String toString() {
+        return "Planet{" +
+                "designation= "+ designation + '\'' +
+                ", masskg=" + massKg +
+                ", orbitEarthYears=" + orbitEarthYears +
+                ", type=" + type + '}';
+    }
+
+    private class PlanetType {
+    }
+
+    private class PLanetType {
+    }
+}
+
